@@ -13,14 +13,11 @@ class Triangle
   # calculates lengths using a^2 + b^2 = c^2
   def side_lengths
     #side a --> b
-    abx = @points[1][0]-@points[0][0]
-    aby = @points[1][1]-@points[0][0]
-    
-    side_ab = Math.sqrt((@points[1][0]-@points[0][0])**2) + ((@points[1][1]-@points[0][1])**2)
+    side_ab = calculate_side(@points[0], @points[1])
     #side b --> c
-    side_bc = Math.sqrt((@points[2][0]-@points[1][0])**2) + ((@points[2][1]-@points[1][1])**2)
+    side_bc = calculate_side(@points[1], @points[2])
     #side c --> a
-    side_ca = Math.sqrt((@points[0][0]-@points[2][0])**2) + ((@points[0][1]-@points[2][1])**2)
+    side_ca = calculate_side(@points[2], @points[0])
     [side_ab, side_bc, side_ca]
   end
   

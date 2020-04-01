@@ -8,6 +8,9 @@ describe Triangle do
     it "calculates the distance between (5,5) and (6,7) as 2.23" do
       expect(subject.calculate_side([5,5],[6,7])).to eq(2.23)
     end
+    it "calculates the distance between (10.4, 9.1) and (3.1, 6.9) as 7.62" do
+      expect(subject.calculate_side([10.4,9.1],[3.1,6.9])).to eq(7.62)
+    end
   end
   
   context "isosceles triangle" do
@@ -17,14 +20,14 @@ describe Triangle do
     end
     
     it "returns a list of sides" do
-      expect(tri.side_lengths).to contain_exactly(1.118, 1.118, 1)
+      expect(tri.side_lengths).to contain_exactly(1.11, 1.11, 1)
     end
   end
   
   context "right angle triangle" do
     let(:tri) { Triangle.new([0,0],[0,1],[1,0]) }
     it "returns a list of sides" do
-      expect(tri.side_lengths).to contain_exactly(1.414, 1, 1)
+      expect(tri.side_lengths).to contain_exactly(1.41, 1, 1)
     end
   end
 end
