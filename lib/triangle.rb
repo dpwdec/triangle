@@ -26,11 +26,6 @@ class Triangle
   
   #calculate distance between two points
   def calculate_side(p1, p2)
-    dx = p2[0] - p1[0]
-    dy = p2[1] - p1[1]
-    dx_sq = dx**2
-    dy_sq = dy**2
-    d = Math.sqrt(dx_sq + dy_sq).to_d.truncate(2).to_f
-    d
+    Math.sqrt(((p2[0] - p1[0]) ** 2) + ((p2[1] - p1[1]) ** 2)).to_d.truncate(2).to_f
   end
 end
