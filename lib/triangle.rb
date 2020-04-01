@@ -40,7 +40,7 @@ class Triangle
   
   def angle_between_vectors(v1, v2)
     dot_prod = v1.inner_product(v2)
-    radians_to_degrees(dot_prod/(v1.magnitude * v2.magnitude))
+    radians_to_degrees(Math.acos(dot_prod/(v1.magnitude * v2.magnitude)))
   end
   
   def radians_to_degrees(r)
