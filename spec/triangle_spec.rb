@@ -14,17 +14,36 @@ describe Triangle do
   end
   
   describe "calculating the vector between two points" do
+    it "returns a vector" do
+      expect(subject.vector_between_points([0, 0], [1, 1])).to be_a_kind_of(Vector)
+    end
+    
     it "calculates vector between (1, 0) and (0.5, 1) as (-0.5, 1)" do
-      expect(subject.vector_between_points([1, 0], [0.5, 1])).to eq([-0.5, 1.0])
+      expect(subject.vector_between_points([1, 0], [0.5, 1])).to eq(Vector[-0.5, 1.0])
     end
     it "calculates vector between (10, 12) and (22, 3) as (12, -9)" do
-      expect(subject.vector_between_points([10, 12], [22, 3])).to eq([12.0, -9.0])
+      expect(subject.vector_between_points([10, 12], [22, 3])).to eq(Vector[12.0, -9.0])
     end
   end
   
-  describe "calculating the angle between two points" do
+  describe "converts radians to degrees to 1 decimal place" do
+    it "converts 1 to 57.2" do
+      expect(subject.radians_to_degrees(1.0)).to eq(57.2)
+    end
+    it "converts 0.7893 to 45.2" do
+      expect(subject.radians_to_degrees(0.7893)).to eq(45.2)
+    end
+    it "converts 0.04 to 2.2" do
+      expect(subject.radians_to_degrees(0.04)).to eq(2.2)
+    end
+  end
+  
+  describe "calculating the angle between two vectors" do
     it "calculates (1, 1), (0, 0) and (1, 0) as 45.0" do
-      expect(subject.angle_between_points([1, 1], [0, 0], [1, 0])).to eq(45.0)
+      expect(subject.angle_between_vectors(Vector[1.0, 1.0], Vector[1.0, 0.0])).to eq(45.0)
+    end
+    it "calculates angle between (10, 15) and (3, 7) as 10.4" do
+      expect(subject.angle_between_vectors(Vector[10.0, 15.0], Vector[3.0, 7.0])).to eq(10.4)
     end
   end
   
