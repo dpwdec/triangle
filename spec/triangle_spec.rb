@@ -13,6 +13,21 @@ describe Triangle do
     end
   end
   
+  describe "calculating the vector between two points" do
+    it "calculates vector between (1, 0) and (0.5, 1) as (-0.5, 1)" do
+      expect(subject.vector_between_points([1, 0], [0.5, 1])).to eq([-0.5, 1.0])
+    end
+    it "calculates vector between (10, 12) and (22, 3) as (12, -9)" do
+      expect(subject.vector_between_points([10, 12], [22, 3])).to eq([12.0, -9.0])
+    end
+  end
+  
+  describe "calculating the angle between two points" do
+    it "calculates (1, 1), (0, 0) and (1, 0) as 45.0" do
+      expect(subject.angle_between_points([1, 1], [0, 0], [1, 0])).to eq(45.0)
+    end
+  end
+  
   context "isosceles triangle" do
     let(:tri) { Triangle.new([0.0,0.0],[1.0,0.0],[0.5,1.0]) }
     it "returns a list of points" do
@@ -25,7 +40,7 @@ describe Triangle do
   end
   
   context "right angle triangle" do
-    let(:tri) { Triangle.new([0,0],[0,1],[1,0]) }
+    let(:tri) { Triangle.new([0.0,0.0],[0.0,1.0],[1.0,0.0]) }
     it "returns a list of sides" do
       expect(tri.side_lengths).to contain_exactly(1.41, 1, 1)
     end
