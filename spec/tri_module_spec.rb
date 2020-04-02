@@ -39,6 +39,15 @@ describe Tri do
       end
     end
     
+    context "calculates the magnitude of a vector" do
+      it "calculates magnitude of vector (3, 4) as 5.0" do
+        expect(Tri.magnitude(Vector2d(3, 4))).to eq(5.0)
+      end
+      it "calculates magnitude of vector (10, 14) as 17.204" do
+        expect(Tri.magnitude(Vector2d(10.0, 14.0), 3)).to eq(17.204)
+      end
+    end
+    
     context "calculates a vector between two points" do
       it "returns a vector" do
         expect(Tri.distance(Vector2d(0, 0), Vector2d(1, 1))).to be_a_kind_of(Vector2d)
@@ -53,10 +62,10 @@ describe Tri do
     end
     
     context "calculate angle at B for points A --> B --> C" do
-      it "calculates angle between (1, 0), (0, 0), (0.5, 1) as 63.4 degrees" do
+      xit "calculates angle between (1, 0), (0, 0), (0.5, 1) as 63.4 degrees" do
         expect(Tri.angle(Vector2d(1.0, 0.0), Vector2d(0.0, 0.0), Vector2d(0.5, 1.0))).to eq(63.4)
       end
-      it "calculates angle between (10, 5), (2, 3), (0, 0) to be 137.7" do
+      xit "calculates angle between (10, 5), (2, 3), (0, 0) to be 137.7" do
         expect(Tri.angle(Vector2d(10.0, 5.0), Vector2d(2.0, 3.0), Vector2d(0.0, 0.0))).to eq(137.7)
       end
       

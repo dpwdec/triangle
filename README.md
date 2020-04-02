@@ -13,7 +13,8 @@ Test project with RSpec to build a `Triangle` class and a `Tri` module.
 The `Tri` module can perform triangle based calculations:
 + Utility
   + calculate the length of the side of a triangle
-  + calculate a vector between two points
+  + calculate the magnitude of a vector
+  + calculate an xy vector between two points
   + calculate the angle between two vectors
   + calculate an angle at B of points A --> B --> C
 + Triangle Based
