@@ -96,6 +96,20 @@ describe Tri do
       it "returns a list of sides for triangle (0, 0), (0, 1), (1, 0)" do
         expect(Tri.sides(Vector2d(0, 0), Vector2d(0, 1), Vector2d(1, 0))).to contain_exactly(1.41, 1, 1)
       end
+    end
+    
+    context "calculates list of angles from triangle vertexes ABC" do
+      it "returns an array" do
+        expect(Tri.angles(Vector2d(0,0), Vector2d(1,1), Vector2d(2,2))).to be_a_kind_of(Array)
+      end
+      
+      it "returns a list of anlges for triangle (0, 0), (1, 0), (0.5, 1)" do
+        expect(Tri.angles(Vector2d(0, 0), Vector2d(1, 0), Vector2d(0.5, 1), 1)).to contain_exactly(63.4, 63.4, 53.1)
+      end
+      
+      it "returns a list of angles for triangle (0, 0), (0, 1), (1, 0)" do
+      expect(Tri.angles(Vector2d(0, 0), Vector2d(0, 1), Vector2d(1, 0), 1)).to contain_exactly(45.0, 45.0, 90.0)
+    end
       
     end
     

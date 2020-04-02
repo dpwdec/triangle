@@ -51,6 +51,10 @@ module Tri
     [side(p1, p2), side(p2, p3), side(p3, p1)]
   end
   
+  def self.angles(p1, p2, p3, dp=2)
+    [angle(p1, p2, p3, dp), angle(p2, p3, p1, dp), angle(p3, p1, p2, dp)]
+  end
+  
   # CONVERSION METHODS
   
   # convert radians to degrees
