@@ -45,4 +45,4 @@ This class also contains methods to check triangle specific calculations such as
 or `barycentric(point)` which returns the barycentric coordinates of a point for this triangle instance *if* it is inside the triangle.
 The `Triangle` class relies heavily on the `Tri` module to function.
 
-`tri.rb` contains the `Tri` module which contains a suite of methods for triangle based maths and calculations.
+`tri.rb` contains the `Tri` module which hosts a suite of methods for triangle based maths and calculations.
