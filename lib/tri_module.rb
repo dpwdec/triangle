@@ -33,15 +33,13 @@ module Tri
   
   #calculate angle between points A --> B --> C
   def self.angle(p1, p2, p3)
-    a = side(p1, p2)
-    b = side(p2, p3)
-    c = side(p3, p1)
+
   end
   
   # calculate angle between two vectors
   def self.vangle(v1, v2, dp=2)
-    dot_prod = v1.dot_product(v2)
-    rtd(Math.acos(dot_prod/(magnitude(v1, 100) * magnitude(v2, 100))), dp)
+    #dot_prod = v1.dot_product(v2)
+    rtd(Math.acos(v1.dot_product(v2)/(magnitude(v1, 100) * magnitude(v2, 100))), dp)
   end
   
   # convert radians to degrees
