@@ -1,46 +1,38 @@
 require 'bigdecimal/util'
 require 'matrix'
+require 'vector2d'
+require 'tri_module'
 
 class Triangle
-  def initialize(a=[0.0, 0.0], b=[1.0, 0.0], c=[0.5, 0.0])
-    @points = Array.new
-    @points.push(a).push(b).push(c)
+  
+  include Tri
+  
+  def initialize(a=Vector2d(0, 0), b=Vector2d(1, 0), c=Vector2d(0.5, 1))
+    @points = {a: a, b: b, c: c}
+    sides = Tri.sides(@points[:a], @points[:b], @points[:c])
+    @sides = { ab: sides[0], bc: sides[1], ca: sides[2] }
+    @angles = m_angles
+  end
+  
+  # place angles of this triangle into a hash
+  def m_angles
+    Hash[
+      abc: Tri.angle(@points[:a], @points[:b], @points[:c]),
+      bca: Tri.angle(@points[:b], @points[:c], @points[:a]),
+      cab: Tri.angle(@points[:c], @points[:a], @points[:b]),
+    ]
   end
   
   def points
     @points
   end
   
-  def side_lengths
-    #side a --> b
-    side_ab = calculate_side(@points[0], @points[1])
-    #side b --> c
-    side_bc = calculate_side(@points[1], @points[2])
-    #side c --> a
-    side_ca = calculate_side(@points[2], @points[0])
-    [side_ab, side_bc, side_ca]
+  def sides
+    @sides
   end
   
-  def tri_angles
-    #angle a --> b --> c
-    angle_abc = angle_between_points(@points[1], @points[0], @points[2])
-    #angle b --> c --> a
-    angle_bca = angle_between_points(@points[2], @points[1], @points[0])
-    #angle c --> a --> b
-    angle_cab = angle_between_points(@points[0], @points[2], @points[1])
-    [angle_abc, angle_bca, angle_cab]
-  end
-  
-  def tri_area
-    area_of_triangle(@points[0], @points[1], @points[2])
-  end
-  
-  def area_of_triangle(p1, p2, p3)
-    a1 = p1[0]*(p2[1]-p3[1])
-    a2 = p2[0]*(p3[1]-p1[1])
-    a3 = p3[0]*(p1[1]-p2[1])
-    area = (a1 + a2 + a3)/2
-    area.abs
+  def angles
+    @angles
   end
 
 end
