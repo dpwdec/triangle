@@ -7,10 +7,11 @@ Test project with RSpec to build a triangle class that can:
 + calculate the distance between two points
 + calculate a vector between two points
 + calculate an angle between two vectors
++ calculate an angle between three points
 + convert radians to degrees
 + calculate the sides of a triangle
 + calculate the angles of the triangle
-+ calculate the are of the triangle
++ calculate the area of the triangle
 
 ## Structure
 

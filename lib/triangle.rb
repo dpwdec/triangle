@@ -21,6 +21,16 @@ class Triangle
     [side_ab, side_bc, side_ca]
   end
   
+  def tri_angles
+    #angle a --> b --> c
+    angle_abc = angle_between_points(@points[1], @points[0], @points[2])
+    #angle b --> c --> a
+    angle_bca = angle_between_points(@points[2], @points[1], @points[0])
+    #angle c --> a --> b
+    angle_cab = angle_between_points(@points[0], @points[2], @points[1])
+    [angle_abc, angle_bca, angle_cab]
+  end
+  
   # calculates lengths using a^2 + b^2 = c^2
   def calculate_side(p1, p2)
     Math.sqrt(((p2[0] - p1[0]) ** 2) + ((p2[1] - p1[1]) ** 2)).to_d.truncate(2).to_f
@@ -47,5 +57,4 @@ class Triangle
   def radians_to_degrees(r)
     (r * 180 / Math::PI).to_d.truncate(1).to_f
   end
-  
 end
