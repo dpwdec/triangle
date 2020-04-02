@@ -16,7 +16,7 @@ module Tri
   # calculates length of side using:
   # a^2 + b^2 = c^2
   def self.side(p1, p2)
-    Math.sqrt(((p2.x - p1.x) ** 2) + ((p2.y - p1.y) ** 2)).to_d.truncate(2).to_f
+    Math.sqrt((distance(p1, p2).x ** 2) + (distance(p1, p2).y ** 2)).to_d.truncate(2).to_f
   end
   
   # calculate vector between two points using:
@@ -35,7 +35,6 @@ module Tri
   # calculate angle between two vectors
   def self.vangle(v1, v2)
     dot_prod = v1.dot_product(v2)
-    puts dot_prod
     radians_to_degrees(Math.acos(dot_prod/(v1.magnitude * v2.magnitude)))
   end
   
