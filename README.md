@@ -2,7 +2,8 @@
 
 ## Dependencies 
 
-This code requires the [`vector2d`][vlink] gem to work.
+This code requires the [vector2d][vlink] gem to work.
+
 [vlink]: https://github.com/elektronaut/vector2d "Vector 2d library"
 
 ## Spec
