@@ -1,5 +1,10 @@
 # Triangle RSpec
 
+## Dependencies 
+
+This code requires the [`vector2d`][vlink] gem to work.
+[vlink]: (https://github.com/elektronaut/vector2d, "Vector 2d library")
+
 ## Spec
 
 Test project with RSpec to build a triangle class that can:

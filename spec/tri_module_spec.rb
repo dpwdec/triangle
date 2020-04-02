@@ -6,6 +6,9 @@ describe Tri do
     it "knows that a triangle has 3 sides" do
       expect(Tri::SIDES).to eq(3)
     end
+    it "knows that the internal angle of a triangle are 180" do
+      expect(Tri::INT_ANG).to eq(180)
+    end
   end
   
   context "calculating area" do
@@ -18,5 +21,21 @@ describe Tri do
     it "calculates the area of triangle (5, 2), (8, 8), (13, 4)" do
       expect(Tri.area([5.0, 2.0], [8.0, 8.0], [13.0, 4.0])).to eq(21.0)
     end
+  end
+  
+  context "calculates side of a triangle" do
+    it "calculates the distances between (0,0) and (1,1) as 1.41" do
+      expect(Tri.side([0,0],[1,1])).to eq(1.41)
+    end
+    it "calculates the distance between (5,5) and (6,7) as 2.23" do
+      expect(Tri.side([5,5],[6,7])).to eq(2.23)
+    end
+    it "calculates the distance between (10.4, 9.1) and (3.1, 6.9) as 7.62" do
+      expect(Tri.side([10.4,9.1],[3.1,6.9])).to eq(7.62)
+    end
+  end
+  
+  it "tests vector" do
+    expect(testVector).to eq(0)
   end
 end
