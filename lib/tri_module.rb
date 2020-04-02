@@ -19,4 +19,10 @@ module Tri
     Math.sqrt(((p2.x - p1.x) ** 2) + ((p2.y - p1.y) ** 2)).to_d.truncate(2).to_f
   end
   
+  # calculate vector between two points using:
+  # x = bx - ax, y = by - ay
+  def self.distance(p1, p2)
+    Vector2d((p2.x - p1.x), (p2.y - p1.y))
+  end
+  
 end

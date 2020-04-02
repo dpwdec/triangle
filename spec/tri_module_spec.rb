@@ -23,15 +23,32 @@ describe Tri do
     end
   end
   
-  context "calculates side of a triangle" do
-    it "calculates the distances between (0,0) and (1,1) as 1.41" do
-      expect(Tri.side(Vector2d(0,0), Vector2d(1,1))).to eq(1.41)
+  describe "Utility" do
+    
+    context "calculates side of a triangle" do
+      it "calculates the distances between (0,0) and (1,1) as 1.41" do
+        expect(Tri.side(Vector2d(0,0), Vector2d(1,1))).to eq(1.41)
+      end
+      it "calculates the distance between (5,5) and (6,7) as 2.23" do
+        expect(Tri.side(Vector2d(5,5), Vector2d(6,7))).to eq(2.23)
+      end
+      it "calculates the distance between (10.4, 9.1) and (3.1, 6.9) as 7.62" do
+        expect(Tri.side(Vector2d(10.4,9.1), Vector2d(3.1,6.9))).to eq(7.62)
+      end
     end
-    it "calculates the distance between (5,5) and (6,7) as 2.23" do
-      expect(Tri.side(Vector2d(5,5), Vector2d(6,7))).to eq(2.23)
+    
+    context "calculates a vector between two points" do
+      it "returns a vector" do
+        expect(Tri.distance(Vector2d(0, 0), Vector2d(1, 1))).to be_a_kind_of(Vector2d)
+      end
+      
+      it "calculates vector between (1, 0) and (0.5, 1) as (-0.5, 1)" do
+        expect(Tri.distance(Vector2d(1, 0), Vector2d(0.5, 1))).to eq(Vector2d(-0.5, 1.0))
+      end
+      it "calculates vector between (10, 12) and (22, 3) as (12, -9)" do
+        expect(Tri.distance(Vector2d(10, 12), Vector2d(22, 3))).to eq(Vector2d(12.0, -9.0))
+      end
     end
-    it "calculates the distance between (10.4, 9.1) and (3.1, 6.9) as 7.62" do
-      expect(Tri.side(Vector2d(10.4,9.1), Vector2d(3.1,6.9))).to eq(7.62)
-    end
+    
   end
 end
