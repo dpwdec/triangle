@@ -34,8 +34,4 @@ describe Tri do
       expect(Tri.side(Vector2d(10.4,9.1), Vector2d(3.1,6.9))).to eq(7.62)
     end
   end
-  
-  it "tests vector" do
-    expect(testVector).to eq(0)
-  end
 end

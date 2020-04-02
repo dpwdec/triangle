@@ -20,8 +20,3 @@ module Tri
   end
   
 end
-
-def testVector
-  v = Vector2d(0, 0)
-  v.x
-end
