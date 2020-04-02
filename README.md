@@ -3,7 +3,7 @@
 ## Dependencies 
 
 This code requires the [`vector2d`][vlink] gem to work.
-[vlink]: (https://github.com/elektronaut/vector2d, "Vector 2d library")
+[vlink]: https://github.com/elektronaut/vector2d "Vector 2d library"
 
 ## Spec
 
