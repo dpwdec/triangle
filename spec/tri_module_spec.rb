@@ -84,6 +84,16 @@ describe Tri do
       end
     end
     
+    context "calculating perimeter" do
+      it "calculates the perimeter of triangle (0, 0), (1, 0), (0.5, 1)" do
+       expect(Tri.perimeter(Vector2d(0, 0), Vector2d(1.0, 0.0), Vector2d(0.5, 1))).to eq(3.22)
+      end
+      
+      it "calculates the perimeter of triangle (10, 5), (9, 15), (3, 2)" do
+       expect(Tri.perimeter(Vector2d(10.0, 5.0), Vector2d(9.0, 15.0), Vector2d(3.0, 2.0))).to eq(31.96)
+      end
+    end
+    
     context "calculates list of triangle sides given its vertexes ABC" do
       it "returns an array" do
         expect(Tri.sides(Vector2d(0,0), Vector2d(1,1), Vector2d(2,2))).to be_a_kind_of(Array)

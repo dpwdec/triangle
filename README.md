@@ -19,6 +19,7 @@ The `Tri` module can perform triangle based calculations:
   + calculate an angle at B of points A --> B --> C
 + Triangle Based
   + calculate the area of a triangle given its vertexes
+  + calculate perimeter of a triangle give its vertexes
   + return a list of the lengths of the sides of a triangle given its vertexes
   + return a list of the angles of a triangle given its vertexes
 + Conversion
@@ -31,8 +32,7 @@ The `Triangle` class holds data about a triangle and performs triangle instance 
   + Store a list of triangle instance side lengths AB, BC, CA
   + Store a list of triangle instance angles ABC, BCA, CBA
   + Store triangle instance area
-+ Calculations
-  + calculate list of instance triangle angles using length based trig
+  + Store perimeter of triangle
 
 ## Initial Spec
 
