@@ -16,9 +16,59 @@ describe Triangle do
     it "has an angles Hash" do
       expect(tri.angles).to be_a_kind_of(Hash)
     end
+    
+    it "has a list of sides" do
+      expect(tri.sides.values).to contain_exactly(1.11, 1.11, 1)
+    end
+    
+    it "has a list of angles" do
+      expect(tri.angles.values).to contain_exactly(63.43, 63.43, 53.13)
+    end
+    
+    it "has a angle that matches side abc" do
+      expect(tri.angles[:abc]).to eq(63.43)
+    end
+    it "has angle that matches side bca" do
+      expect(tri.angles[:bca]).to eq(53.13)
+    end
+    it "has angle that matches side cab" do
+      expect(tri.angles[:cab]).to eq(63.43)
+    end
   end
+  
+  context "Triangle (10, 5), (9, 15), (3, 2)" do
+    let(:tri) { Triangle.new(Vector2d(10, 5), Vector2d(9, 15), Vector2d(3, 2)) }
     
+    it "has points Hash" do
+      expect(tri.points).to be_a_kind_of(Hash)
+    end
     
+    it "has a sides Hash" do
+      expect(tri.sides).to be_a_kind_of(Hash)
+    end
+    
+    it "has an angles Hash" do
+      expect(tri.angles).to be_a_kind_of(Hash)
+    end
+    
+    it "has a list of sides" do
+      expect(tri.sides.values).to contain_exactly(14.31, 7.61, 10.04)
+    end
+    
+    it "has a list of angles" do
+      expect(tri.angles.values).to contain_exactly(107.48, 30.48, 42.02)
+    end
+    
+    it "has a angle that matches side abc" do
+      expect(tri.angles[:abc]).to eq(30.48)
+    end
+    it "has angle that matches side bca" do
+      expect(tri.angles[:bca]).to eq(42.02)
+    end
+    it "has angle that matches side cab" do
+      expect(tri.angles[:cab]).to eq(107.48)
+    end
+  end
     
 =begin
     it "returns a list of points" do
