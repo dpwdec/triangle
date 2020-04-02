@@ -20,6 +20,20 @@ class Triangle
     @perimeter = Tri.perimeter(@points[:a], @points[:b], @points[:c])
   end
   
+  # calculate if a point lies within this triangle using
+  # size of PAB + PAC + PBC equals area
+  def contains(v)
+    pac = Tri.area(v, @points[:a], @points[:c])
+    pba = Tri.area(v, @points[:b], @points[:a])
+    pcb = Tri.area(v, @points[:c], @points[:b])
+    
+    if @area == (pac + pba + pcb)
+      return true
+    else
+      return false
+    end
+  end
+  
   def points
     @points
   end

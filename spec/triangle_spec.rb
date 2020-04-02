@@ -47,6 +47,15 @@ describe Triangle do
     it "has a perimeter of 3.23" do
       expect(tri.perimeter.to_d.truncate(2).to_f).to eq(3.23)
     end
+    
+    it "says that point (0.2, 0.4) lies within it" do
+      expect(tri.contains(Vector2d(0.2, 0.4))).to be true
+    end
+    
+    it "says that point (20.0, 17.0) DOES NOT lie within it" do
+      expect(tri.contains(Vector2d(20.0, 17.9))).to be false
+    end
+    
   end
   
   context "Triangle (10, 5), (9, 15), (3, 2)" do
