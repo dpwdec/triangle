@@ -74,7 +74,7 @@ describe Tri do
   
   describe "Conversion" do
     
-    context "converst radians to degrees" do
+    context "converts radians to degrees" do
       it "converts 1 to 57.295" do
       expect(Tri.rtd(1.0, 3)).to eq(57.295)
       end
@@ -86,6 +86,15 @@ describe Tri do
       end
       it "converts 2.1 to 120.32" do
         expect(Tri.rtd(0.04)).to eq(2.29)
+      end
+    end
+    
+    context "converts degrees to radians" do
+      it "converts 40 to 0.69" do
+        expect(Tri.dtr(40.0)).to eq(0.69)
+      end
+      it "converts 120 to 2.0" do
+        expect(Tri.dtr(120.0, 1)).to eq(2.0)
       end
     end
     

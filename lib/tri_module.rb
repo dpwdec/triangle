@@ -39,8 +39,14 @@ module Tri
     radians_to_degrees(Math.acos(dot_prod/(v1.magnitude * v2.magnitude)))
   end
   
+  # convert radians to degrees
   def self.rtd(radians, decimal_places=2)
     (radians * 180 / Math::PI).to_d.truncate(decimal_places).to_f
+  end
+  
+  # convert degrees to radians
+  def self.dtr(degrees, decimal_places=2)
+    ((degrees / 180) * Math::PI).to_d.truncate(decimal_places).to_f
   end
   
 end
