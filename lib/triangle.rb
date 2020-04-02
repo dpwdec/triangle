@@ -31,6 +31,14 @@ class Triangle
     [angle_abc, angle_bca, angle_cab]
   end
   
+  def area_of_triangle(p1, p2, p3)
+    a1 = p1[0]*(p2[1]-p3[1])
+    a2 = p2[0]*(p3[1]-p1[1])
+    a3 = p3[0]*(p1[1]-p2[1])
+    area = (a1 + a2 + a3)/2
+    area.abs
+  end
+  
   # calculates lengths using a^2 + b^2 = c^2
   def calculate_side(p1, p2)
     Math.sqrt(((p2[0] - p1[0]) ** 2) + ((p2[1] - p1[1]) ** 2)).to_d.truncate(2).to_f
