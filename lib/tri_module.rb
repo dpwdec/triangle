@@ -17,7 +17,6 @@ module Tri
   # a^2 + b^2 = c^2
   def self.side(p1, p2)
     magnitude(distance(p1, p2), 5).to_d.truncate(2).to_f
-    #Math.sqrt((distance(p1, p2).x ** 2) + (distance(p1, p2).y ** 2)).to_d.truncate(2).to_f
   end
   
   # calculate the magnitude of a vector using:
@@ -40,9 +39,9 @@ module Tri
   end
   
   # calculate angle between two vectors
-  def self.vangle(v1, v2)
+  def self.vangle(v1, v2, dp=2)
     dot_prod = v1.dot_product(v2)
-    rtd(Math.acos(dot_prod/(side(v1.x, v1.y) * side(v2.x, v2.y))))
+    rtd(Math.acos(dot_prod/(magnitude(v1, 100) * magnitude(v2, 100))), dp)
   end
   
   # convert radians to degrees

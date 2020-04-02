@@ -76,7 +76,10 @@ describe Tri do
         expect(Tri.vangle(Vector2d(1.0, 1.0), Vector2d(1.0, 0.0))).to eq(45.0)
       end
       it "calculates angle between (10, 15) and (3, 7) as 10.4" do
-        expect(Tri.vangle(Vector2d(10.0, 15.0), Vector2d(3.0, 7.0))).to eq(10.4)
+        expect(Tri.vangle(Vector2d(10.0, 15.0), Vector2d(3.0, 7.0), 1)).to eq(10.4)
+      end
+      it "calculates angle between (43.2, 19) and (21, 5.3) as 20.235" do
+        expect(Tri.vangle(Vector2d(43.2, 19.0), Vector2d(21.0, 5.3), 3)).to eq(9.576)
       end
     end
   end
