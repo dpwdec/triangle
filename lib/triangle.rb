@@ -27,7 +27,9 @@ class Triangle
     pba = Tri.area(v, @points[:b], @points[:a])
     pcb = Tri.area(v, @points[:c], @points[:b])
     
-    if @area == (pac + pba + pcb)
+    if @area == (Tri.area(v, @points[:a], @points[:c]) + 
+      Tri.area(v, @points[:b], @points[:a]) + 
+      Tri.area(v, @points[:c], @points[:b]))
       return true
     else
       return false
