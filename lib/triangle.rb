@@ -11,16 +11,12 @@ class Triangle
     @points = {a: a, b: b, c: c}
     sides = Tri.sides(@points[:a], @points[:b], @points[:c])
     @sides = { ab: sides[0], bc: sides[1], ca: sides[2] }
-    @angles = m_angles
-  end
-  
-  # place angles of this triangle into a hash
-  def m_angles
-    Hash[
+    @angles = Hash[
       abc: Tri.angle(@points[:a], @points[:b], @points[:c]),
       bca: Tri.angle(@points[:b], @points[:c], @points[:a]),
       cab: Tri.angle(@points[:c], @points[:a], @points[:b]),
     ]
+    @area = Tri.area(@points[:a], @points[:b], @points[:c])
   end
   
   def points
@@ -33,6 +29,10 @@ class Triangle
   
   def angles
     @angles
+  end
+  
+  def area
+    @area
   end
 
 end

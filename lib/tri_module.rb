@@ -45,7 +45,7 @@ module Tri
   # calculates area of arbitrary triangle using:
   # (ax(by - cy) + bx(cy - ay) + cx(ay - by)) / 2
   def self.area(p1, p2, p3)
-    (((p1.x*(p2.y-p3.y)) + (p2.x*(p3.y-p1.y)) + (p3.x*(p1.y-p2.y)))/2).abs
+    (((p1.x*(p2.y-p3.y)) + (p2.x*(p3.y-p1.y)) + (p3.x*(p1.y-p2.y)))/2.0).abs
   end
   
   # returns a list of the side lengths of an arbitrary triangle

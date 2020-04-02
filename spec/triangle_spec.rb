@@ -34,6 +34,10 @@ describe Triangle do
     it "has angle that matches side cab" do
       expect(tri.angles[:cab]).to eq(63.43)
     end
+    
+    it "has an area of 0.5" do
+      expect(tri.area).to eq(0.5)
+    end
   end
   
   context "Triangle (10, 5), (9, 15), (3, 2)" do
@@ -67,6 +71,10 @@ describe Triangle do
     end
     it "has angle that matches side cab" do
       expect(tri.angles[:cab]).to eq(107.48)
+    end
+    
+    it "has an area of 36.5" do
+      expect(tri.area).to eq(36.5)
     end
   end
     
