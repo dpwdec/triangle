@@ -35,7 +35,7 @@ module Tri
   # calculate angle between two vectors
   def self.vangle(v1, v2)
     dot_prod = v1.dot_product(v2)
-    radians_to_degrees(Math.acos(dot_prod/(v1.magnitude * v2.magnitude)))
+    rtd(Math.acos(dot_prod/(side(v1.x, v1.y) * side(v2.x, v2.y))))
   end
   
   # convert radians to degrees
