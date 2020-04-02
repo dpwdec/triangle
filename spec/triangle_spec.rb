@@ -1,4 +1,5 @@
 require 'triangle.rb'
+require 'bigdecimal/util'
 
 describe Triangle do
   
@@ -18,25 +19,33 @@ describe Triangle do
     end
     
     it "has a list of sides" do
-      expect(tri.sides.values).to contain_exactly(1.11, 1.11, 1)
+      expect(tri.sides.values
+      .map{|num| num.to_d.truncate(2).to_f })
+      .to contain_exactly(1.11, 1.11, 1)
     end
     
     it "has a list of angles" do
-      expect(tri.angles.values).to contain_exactly(63.43, 63.43, 53.13)
+      expect(tri.angles.values
+      .map{|num| num.to_d.truncate(2).to_f })
+      .to contain_exactly(63.43, 63.43, 53.13)
     end
     
     it "has a angle that matches side abc" do
-      expect(tri.angles[:abc]).to eq(63.43)
+      expect(tri.angles[:abc].to_d.truncate(2).to_f).to eq(63.43)
     end
     it "has angle that matches side bca" do
-      expect(tri.angles[:bca]).to eq(53.13)
+      expect(tri.angles[:bca].to_d.truncate(2).to_f).to eq(53.13)
     end
     it "has angle that matches side cab" do
-      expect(tri.angles[:cab]).to eq(63.43)
+      expect(tri.angles[:cab].to_d.truncate(2).to_f).to eq(63.43)
     end
     
     it "has an area of 0.5" do
       expect(tri.area).to eq(0.5)
+    end
+    
+    it "has a perimeter of 3.23" do
+      expect(tri.perimeter.to_d.truncate(2).to_f).to eq(3.23)
     end
   end
   
@@ -56,21 +65,25 @@ describe Triangle do
     end
     
     it "has a list of sides" do
-      expect(tri.sides.values).to contain_exactly(14.31, 7.61, 10.04)
+      expect(tri.sides.values
+      .map{|num| num.to_d.truncate(2).to_f })
+      .to contain_exactly(14.31, 7.61, 10.04)
     end
     
     it "has a list of angles" do
-      expect(tri.angles.values).to contain_exactly(107.48, 30.48, 42.02)
+      expect(tri.angles.values
+      .map{|num| num.to_d.truncate(2).to_f })
+      .to contain_exactly(107.48, 30.48, 42.02)
     end
     
     it "has a angle that matches side abc" do
-      expect(tri.angles[:abc]).to eq(30.48)
+      expect(tri.angles[:abc].to_d.truncate(2).to_f).to eq(30.48)
     end
     it "has angle that matches side bca" do
-      expect(tri.angles[:bca]).to eq(42.02)
+      expect(tri.angles[:bca].to_d.truncate(2).to_f).to eq(42.02)
     end
     it "has angle that matches side cab" do
-      expect(tri.angles[:cab]).to eq(107.48)
+      expect(tri.angles[:cab].to_d.truncate(2).to_f).to eq(107.48)
     end
     
     it "has an area of 36.5" do
