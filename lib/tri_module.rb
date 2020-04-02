@@ -1,5 +1,3 @@
-require 'bigdecimal/util'
-require 'matrix'
 require 'vector2d'
 
 module Tri

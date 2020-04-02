@@ -1,5 +1,7 @@
 # Triangle RSpec
 
+Test project with RSpec to build a `Triangle` class and a `Tri` module.
+
 ## Dependencies 
 
 This code requires the [vector2d][vlink] gem to work.
@@ -7,8 +9,6 @@ This code requires the [vector2d][vlink] gem to work.
 [vlink]: https://github.com/elektronaut/vector2d "Vector 2d library"
 
 ## Spec
-
-Test project with RSpec to build a `Triangle` class and a `Tri` module.
 
 The `Tri` module can perform triangle based calculations:
 + Utility
@@ -35,22 +35,14 @@ The `Triangle` class holds data about a triangle and performs triangle instance 
   + Store triangle instance perimeter
 + Calculations
   + Test if a point lies within the triangle 
-
-## Initial Spec
-
-> Test project with RSpec to build a triangle class that can:
-> + store coordinate information A, B, C about the triangle
-> + calculate the distance between two points
-> + calculate a vector between two points
-> + calculate an angle between two vectors
-> + calculate an angle between three points
-> + convert radians to degrees
-> + calculate the sides of a triangle
-> + calculate the angles of the triangle
-> + calculate the area of the triangle
+  + Return barycentric coordinates for a point inside the triangle
 
 ## Structure
 
-```
-triangle.rb
-```
+`triangle.rb` contains the `Triangle` class which store information about a specific instance of triangle. 
+Triangles are immutable being purely functional constructs in this implementation.
+This class also contains methods to check triangle specific calculations such as `contains(point)` to check if a point is inside this triangle instance,
+or `barycentric(point)` which returns the barycentric coordinates of a point for this triangle instance *if* it is inside the triangle.
+The `Triangle` class relies heavily on the `Tri` module to function.
+
+`tri.rb` contains the `Tri` module which contains a suite of methods for triangle based maths and calculations.
