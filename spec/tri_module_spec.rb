@@ -25,13 +25,13 @@ describe Tri do
   
   context "calculates side of a triangle" do
     it "calculates the distances between (0,0) and (1,1) as 1.41" do
-      expect(Tri.side([0,0],[1,1])).to eq(1.41)
+      expect(Tri.side(Vector2d(0,0), Vector2d(1,1))).to eq(1.41)
     end
     it "calculates the distance between (5,5) and (6,7) as 2.23" do
-      expect(Tri.side([5,5],[6,7])).to eq(2.23)
+      expect(Tri.side(Vector2d(5,5), Vector2d(6,7))).to eq(2.23)
     end
     it "calculates the distance between (10.4, 9.1) and (3.1, 6.9) as 7.62" do
-      expect(Tri.side([10.4,9.1],[3.1,6.9])).to eq(7.62)
+      expect(Tri.side(Vector2d(10.4,9.1), Vector2d(3.1,6.9))).to eq(7.62)
     end
   end
   
