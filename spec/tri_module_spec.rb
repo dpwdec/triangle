@@ -1,6 +1,13 @@
 require 'tri_module'
 
 describe Tri do
+  
+  context "triangle information" do
+    it "knows that a triangle has 3 sides" do
+      expect(Tri::SIDES).to eq(3)
+    end
+  end
+  
   context "calculating area" do
     it "calculates the are of triangle (0, 0), (0, 1), (1, 0)" do
       expect(Tri.area([0.0, 0.0], [0.0, 1.0], [1.0, 0.0])).to eq(0.5)

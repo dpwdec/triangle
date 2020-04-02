@@ -2,7 +2,7 @@ require 'bigdecimal/util'
 require 'matrix'
 
 class Triangle
-  def initialize(a=[0.0,0.0], b=[1.0,0.0], c=[0.5,0.0])
+  def initialize(a=[0.0, 0.0], b=[1.0, 0.0], c=[0.5, 0.0])
     @points = Array.new
     @points.push(a).push(b).push(c)
   end
