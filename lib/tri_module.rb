@@ -16,7 +16,8 @@ module Tri
   # calculates length of side using:
   # a^2 + b^2 = c^2
   def self.side(p1, p2)
-    Math.sqrt((distance(p1, p2).x ** 2) + (distance(p1, p2).y ** 2)).to_d.truncate(2).to_f
+    magnitude(distance(p1, p2), 5).to_d.truncate(2).to_f
+    #Math.sqrt((distance(p1, p2).x ** 2) + (distance(p1, p2).y ** 2)).to_d.truncate(2).to_f
   end
   
   # calculate the magnitude of a vector using:
