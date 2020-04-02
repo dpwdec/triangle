@@ -17,6 +17,7 @@ class Triangle
       cab: Tri.angle(@points[:c], @points[:a], @points[:b]),
     ]
     @area = Tri.area(@points[:a], @points[:b], @points[:c])
+    @perimeter = Tri.perimeter(@points[:a], @points[:b], @points[:c])
   end
   
   def points
@@ -33,6 +34,10 @@ class Triangle
   
   def area
     @area
+  end
+  
+  def perimeter
+    @perimeter
   end
 
 end

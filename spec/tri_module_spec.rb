@@ -1,4 +1,5 @@
 require 'tri_module'
+require 'bigdecimal/util'
 
 describe Tri do
   
@@ -30,7 +31,7 @@ describe Tri do
         expect(Tri.magnitude(Vector2d(3, 4))).to eq(5.0)
       end
       it "calculates magnitude of vector (10, 14) as 17.204" do
-        expect(Tri.magnitude(Vector2d(10.0, 14.0), 3)).to eq(17.204)
+        expect(Tri.magnitude(Vector2d(10.0, 14.0)).to_d.truncate(3).to_f).to eq(17.204)
       end
     end
     

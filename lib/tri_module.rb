@@ -18,8 +18,8 @@ module Tri
   
   # calculate the magnitude of a vector using:
   # vx^2 + vy^2 = magnitude^2
-  def self.magnitude(v, dp=2)
-    Math.sqrt((v.x ** 2) + (v.y ** 2)).to_d.truncate(dp).to_f
+  def self.magnitude(v)
+    Math.sqrt((v.x ** 2) + (v.y ** 2))
   end
   
   # calculate vector between two points using:
