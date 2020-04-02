@@ -32,13 +32,12 @@ module Tri
   end
   
   #calculate angle between points A --> B --> C
-  def self.angle(p1, p2, p3)
-
+  def self.angle(p1, p2, p3, dp=2)
+    vangle(distance(p1, p2), distance(p3, p2), dp)
   end
   
   # calculate angle between two vectors
   def self.vangle(v1, v2, dp=2)
-    #dot_prod = v1.dot_product(v2)
     rtd(Math.acos(v1.dot_product(v2)/(magnitude(v1, 100) * magnitude(v2, 100))), dp)
   end
   

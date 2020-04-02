@@ -62,11 +62,11 @@ describe Tri do
     end
     
     context "calculate angle at B for points A --> B --> C" do
-      xit "calculates angle between (1, 0), (0, 0), (0.5, 1) as 63.4 degrees" do
-        expect(Tri.angle(Vector2d(1.0, 0.0), Vector2d(0.0, 0.0), Vector2d(0.5, 1.0))).to eq(63.4)
+      it "calculates angle between (1, 0), (0, 0), (0.5, 1) as 63.4 degrees" do
+        expect(Tri.angle(Vector2d(1.0, 0.0), Vector2d(0.0, 0.0), Vector2d(0.5, 1.0), 1)).to eq(63.4)
       end
-      xit "calculates angle between (10, 5), (2, 3), (0, 0) to be 137.7" do
-        expect(Tri.angle(Vector2d(10.0, 5.0), Vector2d(2.0, 3.0), Vector2d(0.0, 0.0))).to eq(137.7)
+      it "calculates angle between (10, 5), (2, 3), (0, 0) to be 137.7" do
+        expect(Tri.angle(Vector2d(10.0, 5.0), Vector2d(2.0, 3.0), Vector2d(0.0, 0.0), 1)).to eq(137.7)
       end
       
     end
