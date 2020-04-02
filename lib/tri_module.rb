@@ -28,7 +28,9 @@ module Tri
     Vector2d((p2.x - p1.x), (p2.y - p1.y))
   end
   
-  # calculate angle between two vectors
+  # calculate angle between two vectors using:
+  # cosϑ = a · b / |a| * |b|
+  # ϑ = acos(a · b / |a| * |b|)
   def self.vangle(v1, v2, dp=2)
     rtd(Math.acos(v1.dot_product(v2)/(magnitude(v1, 100) * magnitude(v2, 100))), dp)
   end
@@ -57,12 +59,14 @@ module Tri
   
   # CONVERSION METHODS
   
-  # convert radians to degrees
+  # convert radians to degrees suing:
+  # r * 180 / PI
   def self.rtd(radians, decimal_places=2)
     (radians * 180 / Math::PI).to_d.truncate(decimal_places).to_f
   end
   
-  # convert degrees to radians
+  # convert degrees to radians using:
+  # (d / 180) * PI
   def self.dtr(degrees, decimal_places=2)
     ((degrees / 180) * Math::PI).to_d.truncate(decimal_places).to_f
   end
