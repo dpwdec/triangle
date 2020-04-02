@@ -14,12 +14,12 @@ The `Tri` module can perform triangle based calculations:
 + Utility
   + calculate the length of the side of a triangle
   + calculate the magnitude of a vector
-  + calculate an xy vector between two points
+  + calculate an xy distance vector between two points
   + calculate the angle between two vectors
   + calculate an angle at B of points A --> B --> C
 + Triangle Based
   + calculate the area of a triangle given its vertexes
-  + return a list of the length of the sides of a triangle given its vertex
+  + return a list of the lengths of the sides of a triangle given its vertexes
   + return a list of the angles of a triangle given its vertexes
 + Conversion
   + convert radians to degrees

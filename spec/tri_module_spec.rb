@@ -11,20 +11,6 @@ describe Tri do
     end
   end
   
-  describe "Triangle Based" do
-    context "calculating area" do
-      it "calculates the are of triangle (0, 0), (0, 1), (1, 0)" do
-        expect(Tri.area(Vector2d(0.0, 0.0), Vector2d(0.0, 1.0), Vector2d(1.0, 0.0))).to eq(0.5)
-      end
-      it "calculates the area of triangle (15, 15), (23, 30), (50, 25)" do
-        expect(Tri.area(Vector2d(15.0, 15.0), Vector2d(23.0, 30.0), Vector2d(50.0, 25.0))).to eq(222.5)
-      end
-      it "calculates the area of triangle (5, 2), (8, 8), (13, 4)" do
-        expect(Tri.area(Vector2d(5.0, 2.0), Vector2d(8.0, 8.0), Vector2d(13.0, 4.0))).to eq(21.0)
-      end
-    end
-  end
-  
   describe "Utility" do
     
     context "calculates side of a triangle" do
@@ -82,6 +68,28 @@ describe Tri do
         expect(Tri.vangle(Vector2d(43.2, 19.0), Vector2d(21.0, 5.3), 3)).to eq(9.576)
       end
     end
+  end
+  
+  describe "Triangle Based" do
+    
+    context "calculating area" do
+      it "calculates the are of triangle (0, 0), (0, 1), (1, 0)" do
+        expect(Tri.area(Vector2d(0.0, 0.0), Vector2d(0.0, 1.0), Vector2d(1.0, 0.0))).to eq(0.5)
+      end
+      it "calculates the area of triangle (15, 15), (23, 30), (50, 25)" do
+        expect(Tri.area(Vector2d(15.0, 15.0), Vector2d(23.0, 30.0), Vector2d(50.0, 25.0))).to eq(222.5)
+      end
+      it "calculates the area of triangle (5, 2), (8, 8), (13, 4)" do
+        expect(Tri.area(Vector2d(5.0, 2.0), Vector2d(8.0, 8.0), Vector2d(13.0, 4.0))).to eq(21.0)
+      end
+    end
+    
+    context "calculates list of triangle sides given its vertexes ABC" do
+      it "returns an array" do
+        expect(Tri.sides).to be_a_kind_of(Array)
+      end
+    end
+    
   end
   
   describe "Conversion" do
