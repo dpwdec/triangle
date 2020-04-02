@@ -8,12 +8,6 @@ module Tri
   SIDES = 3
   INT_ANG = 180
   
-  # calculates area of arbitrary triangle using:
-  # (ax(by - cy) + bx(cy - ay) + cx(ay - by)) / 2
-  def self.area(p1, p2, p3)
-    (((p1.x*(p2.y-p3.y)) + (p2.x*(p3.y-p1.y)) + (p3.x*(p1.y-p2.y)))/2).abs
-  end
-  
   # UTILITY METHODS
   
   # calculates length of side using:
@@ -46,6 +40,16 @@ module Tri
   
   # TRIANGLE BASED METHODS
   
+  # calculates area of arbitrary triangle using:
+  # (ax(by - cy) + bx(cy - ay) + cx(ay - by)) / 2
+  def self.area(p1, p2, p3)
+    (((p1.x*(p2.y-p3.y)) + (p2.x*(p3.y-p1.y)) + (p3.x*(p1.y-p2.y)))/2).abs
+  end
+  
+  # returns a list of the side lengths of an arbitrary triangle
+  def self.sides(p1, p2, p3)
+    [side(p1, p2), side(p2, p3), side(p3, p1)]
+  end
   
   # CONVERSION METHODS
   

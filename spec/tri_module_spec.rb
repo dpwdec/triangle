@@ -86,8 +86,17 @@ describe Tri do
     
     context "calculates list of triangle sides given its vertexes ABC" do
       it "returns an array" do
-        expect(Tri.sides).to be_a_kind_of(Array)
+        expect(Tri.sides(Vector2d(0,0), Vector2d(1,1), Vector2d(2,2))).to be_a_kind_of(Array)
       end
+      
+      it "returns a list of sides for triangle (0, 0), (1, 0), (0.5, 1)" do
+        expect(Tri.sides(Vector2d(0, 0), Vector2d(1, 0), Vector2d(0.5, 1))).to contain_exactly(1.11, 1.11, 1)
+      end
+      
+      it "returns a list of sides for triangle (0, 0), (0, 1), (1, 0)" do
+        expect(Tri.sides(Vector2d(0, 0), Vector2d(0, 1), Vector2d(1, 0))).to contain_exactly(1.41, 1, 1)
+      end
+      
     end
     
   end
