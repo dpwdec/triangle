@@ -32,10 +32,11 @@ class Triangle
   end
   
   # calculates angle using 
+  # point one is the target angle point
   def angle_between_points(p1, p2, p3)
-    v1 = vector_between_points(p2, p1)
-    v2 = vector_between_points(p2, p3)
-    45.0
+    v1 = vector_between_points(Vector[p2[0], p2[1]], Vector[p1[0], p1[1]])
+    v2 = vector_between_points(Vector[p3[0], p3[1]], Vector[p1[0], p1[1]])
+    angle_between_vectors(v1, v2)
   end
   
   def angle_between_vectors(v1, v2)

@@ -47,6 +47,15 @@ describe Triangle do
     end
   end
   
+  describe "calculating the angle betweeen three points" do
+    it "calculates angle between (0, 0), (1, 0), (0.5, 1) to be 63.4" do
+      expect(subject.angle_between_points([0.0, 0.0], [1.0, 0.0], [0.5, 1.0])).to eq(63.4)
+    end
+    it "calculates angle between (10, 5), (2, 3), (0, 0) to be 137.7" do
+      expect(subject.angle_between_points([2.0, 3.0], [10.0, 5.0], [0.0, 0.0])).to eq(137.7)
+    end
+  end
+  
   context "isosceles triangle" do
     let(:tri) { Triangle.new([0.0,0.0],[1.0,0.0],[0.5,1.0]) }
     it "returns a list of points" do
