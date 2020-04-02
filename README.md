@@ -33,6 +33,8 @@ The `Triangle` class holds data about a triangle and performs triangle instance 
   + Store a list of triangle instance angles ABC, BCA, CBA
   + Store triangle instance area
   + Store triangle instance perimeter
++ Calculations
+  + Test if a point lies within the triangle 
 
 ## Initial Spec
 
