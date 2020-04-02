@@ -25,4 +25,22 @@ module Tri
     Vector2d((p2.x - p1.x), (p2.y - p1.y))
   end
   
+  #calculate angle between points A --> B --> C
+  def self.angle(p1, p2, p3)
+    a = side(p1, p2)
+    b = side(p2, p3)
+    c = side(p3, p1)
+  end
+  
+  # calculate angle between two vectors
+  def self.vangle(v1, v2)
+    dot_prod = v1.dot_product(v2)
+    puts dot_prod
+    radians_to_degrees(Math.acos(dot_prod/(v1.magnitude * v2.magnitude)))
+  end
+  
+  def self.rtd(radians, decimal_places=2)
+    (radians * 180 / Math::PI).to_d.truncate(decimal_places).to_f
+  end
+  
 end

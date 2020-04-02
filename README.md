@@ -15,7 +15,7 @@ The `Tri` module can perform triangle based calculations:
   + calculate the length of the side of a triangle
   + calculate a vector between two points
   + calculate the angle between two vectors
-  + calculate a angle at B of points A --> B --> C
+  + calculate an angle at B of points A --> B --> C
 + Triangle Based
   + calculate the area of a triangle given its vertexes
   + return a list of the length of the sides of a triangle given its vertex

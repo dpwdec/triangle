@@ -11,15 +11,17 @@ describe Tri do
     end
   end
   
-  context "calculating area" do
-    it "calculates the are of triangle (0, 0), (0, 1), (1, 0)" do
-      expect(Tri.area(Vector2d(0.0, 0.0), Vector2d(0.0, 1.0), Vector2d(1.0, 0.0))).to eq(0.5)
-    end
-    it "calculates the area of triangle (15, 15), (23, 30), (50, 25)" do
-      expect(Tri.area(Vector2d(15.0, 15.0), Vector2d(23.0, 30.0), Vector2d(50.0, 25.0))).to eq(222.5)
-    end
-    it "calculates the area of triangle (5, 2), (8, 8), (13, 4)" do
-      expect(Tri.area(Vector2d(5.0, 2.0), Vector2d(8.0, 8.0), Vector2d(13.0, 4.0))).to eq(21.0)
+  describe "Triangle Based" do
+    context "calculating area" do
+      it "calculates the are of triangle (0, 0), (0, 1), (1, 0)" do
+        expect(Tri.area(Vector2d(0.0, 0.0), Vector2d(0.0, 1.0), Vector2d(1.0, 0.0))).to eq(0.5)
+      end
+      it "calculates the area of triangle (15, 15), (23, 30), (50, 25)" do
+        expect(Tri.area(Vector2d(15.0, 15.0), Vector2d(23.0, 30.0), Vector2d(50.0, 25.0))).to eq(222.5)
+      end
+      it "calculates the area of triangle (5, 2), (8, 8), (13, 4)" do
+        expect(Tri.area(Vector2d(5.0, 2.0), Vector2d(8.0, 8.0), Vector2d(13.0, 4.0))).to eq(21.0)
+      end
     end
   end
   
@@ -50,5 +52,43 @@ describe Tri do
       end
     end
     
+    context "calculate angle at B for points A --> B --> C" do
+      it "calculates angle between (1, 0), (0, 0), (0.5, 1) as 63.4 degrees" do
+        expect(Tri.angle(Vector2d(1.0, 0.0), Vector2d(0.0, 0.0), Vector2d(0.5, 1.0))).to eq(63.4)
+      end
+      it "calculates angle between (10, 5), (2, 3), (0, 0) to be 137.7" do
+        expect(Tri.angle(Vector2d(10.0, 5.0), Vector2d(2.0, 3.0), Vector2d(0.0, 0.0))).to eq(137.7)
+      end
+      
+    end
+    
+    context "calculates an angle between two vectors" do
+      it "calculates (1, 1), (0, 0) and (1, 0) as 45.0" do
+        expect(Tri.vangle(Vector2d(1.0, 1.0), Vector2d(1.0, 0.0))).to eq(45.0)
+      end
+      it "calculates angle between (10, 15) and (3, 7) as 10.4" do
+        expect(Tri.vangle(Vector2d(10.0, 15.0), Vector2d(3.0, 7.0))).to eq(10.4)
+      end
+    end
   end
+  
+  describe "Conversion" do
+    
+    context "converst radians to degrees" do
+      it "converts 1 to 57.295" do
+      expect(Tri.rtd(1.0, 3)).to eq(57.295)
+      end
+      it "converts 0.7893 to 45.2" do
+        expect(Tri.rtd(0.7893, 1)).to eq(45.2)
+      end
+      it "converts 0.04 to 2.29" do
+        expect(Tri.rtd(0.04, 2)).to eq(2.29)
+      end
+      it "converts 2.1 to 120.32" do
+        expect(Tri.rtd(0.04)).to eq(2.29)
+      end
+    end
+    
+  end
+  
 end
