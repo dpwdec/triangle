@@ -12,8 +12,8 @@ module Tri
   
   # calculates length of side using:
   # a^2 + b^2 = c^2
-  def self.side(p1, p2, dp=2)
-    magnitude(distance(p1, p2), 5).to_d.truncate(dp).to_f
+  def self.side(p1, p2)
+    magnitude(distance(p1, p2))
   end
   
   # calculate the magnitude of a vector using:
@@ -31,13 +31,13 @@ module Tri
   # calculate angle between two vectors using:
   # cosϑ = a · b / |a| * |b|
   # ϑ = acos(a · b / |a| * |b|)
-  def self.vangle(v1, v2, dp=2)
-    rtd(Math.acos(v1.dot_product(v2)/(magnitude(v1, 100) * magnitude(v2, 100))), dp)
+  def self.vangle(v1, v2)
+    rtd(Math.acos(v1.dot_product(v2)/(magnitude(v1) * magnitude(v2))))
   end
   
   #calculate angle between points A --> B --> C
-  def self.angle(p1, p2, p3, dp=2)
-    vangle(distance(p1, p2), distance(p3, p2), dp)
+  def self.angle(p1, p2, p3)
+    vangle(distance(p1, p2), distance(p3, p2))
   end
   
   # TRIANGLE BASED METHODS
@@ -48,31 +48,31 @@ module Tri
     (((p1.x*(p2.y-p3.y)) + (p2.x*(p3.y-p1.y)) + (p3.x*(p1.y-p2.y)))/2.0).abs
   end
   
-  def self.perimeter(p1, p2, p3, dp=2)
-    sides(p1, p2, p3, dp).inject(0, :+).to_d.truncate(dp).to_f
+  def self.perimeter(p1, p2, p3)
+    sides(p1, p2, p3).inject(0, :+)
   end
   
   # returns a list of the side lengths of an arbitrary triangle
-  def self.sides(p1, p2, p3, dp=2)
-    [side(p1, p2, dp), side(p2, p3, dp), side(p3, p1, dp)]
+  def self.sides(p1, p2, p3)
+    [side(p1, p2), side(p2, p3), side(p3, p1)]
   end
   
-  def self.angles(p1, p2, p3, dp=2)
-    [angle(p1, p2, p3, dp), angle(p2, p3, p1, dp), angle(p3, p1, p2, dp)]
+  def self.angles(p1, p2, p3)
+    [angle(p1, p2, p3), angle(p2, p3, p1), angle(p3, p1, p2)]
   end
   
   # CONVERSION METHODS
   
   # convert radians to degrees suing:
   # r * 180 / PI
-  def self.rtd(radians, decimal_places=2)
-    (radians * 180 / Math::PI).to_d.truncate(decimal_places).to_f
+  def self.rtd(radians)
+    radians * 180 / Math::PI
   end
   
   # convert degrees to radians using:
   # (d / 180) * PI
-  def self.dtr(degrees, decimal_places=2)
-    ((degrees / 180) * Math::PI).to_d.truncate(decimal_places).to_f
+  def self.dtr(degrees)
+    (degrees / 180) * Math::PI
   end
   
 end
