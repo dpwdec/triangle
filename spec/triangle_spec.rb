@@ -79,6 +79,9 @@ describe Triangle do
     it "returns a list of anlges" do
       expect(tri.tri_angles).to contain_exactly(63.4, 63.4, 53.1)
     end
+    it "returns its area" do
+      expect(tri.tri_area).to eq(0.5)
+    end
   end
   
   context "right angle triangle" do
@@ -88,6 +91,9 @@ describe Triangle do
     end
     it "returns a list of angles" do
       expect(tri.tri_angles).to contain_exactly(45.0, 45.0, 90.0)
+    end
+    it "returns its area" do
+      expect(tri.tri_area).to eq(0.5)
     end
   end
 end

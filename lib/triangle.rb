@@ -31,6 +31,10 @@ class Triangle
     [angle_abc, angle_bca, angle_cab]
   end
   
+  def tri_area
+    area_of_triangle(@points[0], @points[1], @points[2])
+  end
+  
   def area_of_triangle(p1, p2, p3)
     a1 = p1[0]*(p2[1]-p3[1])
     a2 = p2[0]*(p3[1]-p1[1])
